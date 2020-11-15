@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Project/Scenes/MainMenu.unity
+    guid: 8e49e9db5fc7a0344b92248960443f49
+  - enabled: 1
+    path: Assets/Project/Scenes/SetStrabismus.unity
+    guid: 9c8c2dc8a22d15b40816687d2810fa10
+  - enabled: 1
+    path: Assets/Project/Scenes/CoverUncover.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Project/Scenes/MeasureDeviation.unity
+    guid: c9bd1863bd323d140a57aad7c1bb5a29
+  - enabled: 1
+    path: Assets/Project/Scenes/SeeResults.unity
+    guid: 5cd314caa286edf49bc19f7393635b63
   m_configObjects: {}

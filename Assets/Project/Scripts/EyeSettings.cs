@@ -7,7 +7,7 @@ public class EyeSettings : MonoBehaviour
     [SerializeField] EyeMovements leftEye;
     [SerializeField] EyeMovements rightEye;
 
-    [SerializeField] float maxAngle = 25f;
+    StrabismusData data;
 
     public float angleOfDisalignment;
 
@@ -21,32 +21,18 @@ public class EyeSettings : MonoBehaviour
 
     void Awake()
     {
+        data = GameObject.Find("StrabismusData").GetComponent<StrabismusData>();
         SetStrabismus();
     }
     void SetStrabismus()
     {
-
-        leftEye.isSquint = false;
-        rightEye.isSquint = false;
-        float random = Random.value;
-        Debug.Log(random);
-        if(random > 0.5) rightEye.isSquint = true;
-        else leftEye.isSquint = true;
-
-        isForia = false;
-        isTropia = false;
-        random = 0.51f; //////////////////////// MUST BE RANDOM.
-        if(random > 0.5) isTropia = true;
-        else isForia = true;
-
-        exo = false;
-        endo = false;
-        random =Random.value; 
-        if(random > 0.5) exo = true;
-        else endo = true;        
-
-        angleOfDisalignment = Random.value * maxAngle;
-        if(endo && rightEye.isSquint || exo && leftEye.isSquint) angleOfDisalignment *= -1;
+        leftEye.isSquint = data.lefSquint;
+        rightEye.isSquint = data.rightSquint;
+        isForia = data.isForia;
+        isTropia = data.isTropia;
+        endo = data.endo;
+        exo = data.exo;
+        angleOfDisalignment = data.angleOfDisalignment;
     }
 
 }
