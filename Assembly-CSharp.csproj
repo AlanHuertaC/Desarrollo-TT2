@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\Project\Scripts\CameraSwitch.cs" />
      <Compile Include="Assets\Project\Scripts\CoverUncover.cs" />
+     <Compile Include="Assets\Project\Scripts\EnableScenes.cs" />
      <Compile Include="Assets\Project\Scripts\EyeMovements.cs" />
      <Compile Include="Assets\Project\Scripts\EyeSettings.cs" />
      <Compile Include="Assets\Project\Scripts\SceneLoader.cs" />

@@ -17,10 +17,15 @@ public class CoverUncover : MonoBehaviour
 
     Vector3[] path;
     [SerializeField] float duration;
-    [SerializeField] PathMode pathMode;
-    [SerializeField] PathType pathType;
+    //[SerializeField] PathMode pathMode;
+    //[SerializeField] PathType pathType;
+
+    [SerializeField] Ease moveEase = Ease.Linear;
         
     bool play =false;
+
+
+    Tween tween;
     void Start()
     {
         occluder = GameObject.Find("Occluder");
@@ -56,7 +61,9 @@ public class CoverUncover : MonoBehaviour
     public void PlayAnimation()
     {
         Transform occluderTransform = occluder.transform;
-        occluderTransform.DOPath(path,duration,pathType,pathMode,10);
+        //tween = occluderTransform.DOPath(path,duration,pathType,pathMode,10);
+        tween = occluderTransform.DOPath(path,duration).SetEase(moveEase);
+
     }
     
     

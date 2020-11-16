@@ -770,8 +770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 20
-  pathMode: 1
-  pathType: 0
+  moveEase: 1
 --- !u!1 &1077393299
 GameObject:
   m_ObjectHideFlags: 0

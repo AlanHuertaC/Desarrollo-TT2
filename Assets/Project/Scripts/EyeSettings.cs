@@ -32,7 +32,7 @@ public class EyeSettings : MonoBehaviour
         isTropia = data.isTropia;
         endo = data.endo;
         exo = data.exo;
-        angleOfDisalignment = data.angleOfDisalignment;
+        angleOfDisalignment = leftEye.isSquint && exo || rightEye && endo  ? data.angleOfDisalignment*(-1) : data.angleOfDisalignment;
     }
 
 }
