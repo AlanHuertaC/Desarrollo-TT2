@@ -2,6 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+
+Esta clase, obtiene la información de la instancia de "StrabismusData" del estrabismo
+generado.
+
+Esta clase es usada en la escena "CoverUncover".
+
+La clase EyeMovements obtiene de aquí la información necesaria para establecer 
+su comportamiento.
+
+
+(Posiblemente esta clase se puede eliminar para que cada ojo acceda directamente a StrabismusData
+    Por ahora, dejémosla.)
+
+*/
+
 public class EyeSettings : MonoBehaviour
 {
     [SerializeField] EyeMovements leftEye;

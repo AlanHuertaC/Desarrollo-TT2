@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+    Clase encargada de cambiar de escena.
+*/
+
 public class SceneLoader : MonoBehaviour
 {
     public void LoadScene(string sceneName)

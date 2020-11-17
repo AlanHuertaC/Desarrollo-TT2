@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+Esta clase guarda la información del estrabismo generado en la escena "SetStrabismus".
+
+A través de esta las otras escenas pueden acceder a la información que se generó.
+
+*/
+
 public class StrabismusData : MonoBehaviour
 {
 

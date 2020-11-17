@@ -4,6 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+/*
+    Clase utilizada en la escena "SetStrabismus" para obtener los datos de la interfaz de usuario.
+
+    Al presionar "guardar", los datos ingresados por el usuario se pasan a la clase StrabismusData (encargada
+    de compartir estos datos entre escenas).
+
+*/
+
 public class TempData : MonoBehaviour
 {
     public float maxAngle = 25f;

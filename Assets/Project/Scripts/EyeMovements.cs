@@ -2,33 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+    Clase encargada de establecer el comportamiento de cada ojo dependiendo de su estado
+    (con estrabismo o sin estrabismo).
+*/
 public class EyeMovements : MonoBehaviour
 {
-    Transform target;
-    public Quaternion deviation; //Write getter
+    Transform target; // referencia a Transform del objetivo
+
+    EyeSettings eyeSettings; // referencia al objeto de la clase EyeSettings para obtener los datos del estrabismo
+    public Quaternion deviation; //Write getter XD (pa no tener todo publico) Esta variable guarda la desviación (rotación) que debe tener el ojo
 
 
-    public bool iCanSeeIt;
-    float angleOfDisalignment;
-    public bool isSquint;
-    bool isTropia;
-    bool isForia;
+    public bool iCanSeeIt; // bool para saber si puede ver o no el target (si hay algun objeto interponiendo es false)
+    float angleOfDisalignment; // guarda el ángulo al cual debe rotar
+    public bool isSquint; // bool para saber si este ojo es el desviado
+    bool isTropia; // para saber si es tropia (o es foria o es tropia)
+    bool isForia; // para saber si es foria
+
+    [SerializeField]GameObject pupil; // Referencia a la pupila del ojo.
+    [SerializeField]EyeMovements fellowEye; // Referencia del otro ojo (usada para determinar el comportamiento)
+    Quaternion fellowEyeRotation; // Referencia del Quaternion del otro ojo
 
 
-    EyeSettings eyeSettings;
-    [SerializeField]GameObject pupil;
-    [SerializeField]EyeMovements fellowEye;
-    Quaternion fellowEyeRotation;
-
-
-    [SerializeField]float turningSpeed = 30f;
+    [SerializeField]float turningSpeed = 30f; //Velocidad de giro del ojo (Se cambia en el inspector)
 
     void Start()
     {
-        eyeSettings = GameObject.Find("Eyes").GetComponent<EyeSettings>();
+        eyeSettings = GameObject.Find("Eyes").GetComponent<EyeSettings>(); 
         target = GameObject.FindGameObjectWithTag("Target").transform;
 
-        // Set Deviation
+        // Set Deviation. Se llama para inicializar los parámetros de cada ojo
         SetDeviation();
         Debug.Log(this.name + deviation + "Strabismus: " + isSquint);
     }
@@ -39,6 +44,8 @@ public class EyeMovements : MonoBehaviour
         //ForiaBehaviour();
     }
 
+
+    //Método para establecer la desviación en caso de que el ojo sea 
     void SetDeviation()
     {
         isForia = eyeSettings.isForia;

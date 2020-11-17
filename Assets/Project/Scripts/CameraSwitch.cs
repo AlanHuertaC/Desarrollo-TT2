@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+    Clase creada para manejar diferentes cámaras dentro de una escena.
+    
+*/
+
 public class CameraSwitch : MonoBehaviour
 {
     GameObject MainCamera;

@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+    Clase para controlar el acceso a las escenas. 
+    
+    Para poder acceder a los Test se necesita haber generado un estrabismo antes.
+
+    Para acceder a la escena de resultados, se debe haber realizado al menos un test previamente.
+
+*/
+
 public class EnableScenes : MonoBehaviour
 {
     Button setStrabismus;

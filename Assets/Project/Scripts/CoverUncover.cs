@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
+/*
+    Esta clase es la encargada de reproducir la animación del cover test.
+
+*/
+
+
 public class CoverUncover : MonoBehaviour
 {
     GameObject occluder;
