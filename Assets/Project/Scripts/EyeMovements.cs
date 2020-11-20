@@ -23,6 +23,8 @@ public class EyeMovements : MonoBehaviour
 
     [SerializeField]GameObject pupil; // Referencia a la pupila del ojo.
     [SerializeField]EyeMovements fellowEye; // Referencia del otro ojo (usada para determinar el comportamiento)
+
+    public EyeMovements FellowEye() { {return fellowEye;}}
     Quaternion fellowEyeRotation; // Referencia del Quaternion del otro ojo
 
 
@@ -149,7 +151,7 @@ public class EyeMovements : MonoBehaviour
             {
                 //Debug.Log("Hit: " + hit.GetType());
                 Debug.DrawRay(pupil.transform.position, direction , Color.blue);
-                //hitPosition = hit.transform.position;
+                //Debug.Log(hit.transform.eulerAngles);
                 return true;
             }
         }

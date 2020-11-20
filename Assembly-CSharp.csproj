@@ -41,6 +41,8 @@
      <Compile Include="Assets\Project\Scripts\EnableScenes.cs" />
      <Compile Include="Assets\Project\Scripts\EyeMovements.cs" />
      <Compile Include="Assets\Project\Scripts\EyeSettings.cs" />
+     <Compile Include="Assets\Project\Scripts\MovementDetection.cs" />
+     <Compile Include="Assets\Project\Scripts\Results.cs" />
      <Compile Include="Assets\Project\Scripts\SceneLoader.cs" />
      <Compile Include="Assets\Project\Scripts\StrabismusData.cs" />
      <Compile Include="Assets\Project\Scripts\TempData.cs" />
