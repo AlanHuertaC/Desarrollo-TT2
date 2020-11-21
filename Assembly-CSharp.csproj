@@ -56,19 +56,6 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-     <Compile Include="Assets\Project\Scripts\CameraSwitch.cs" />
-     <Compile Include="Assets\Project\Scripts\CoverUncover.cs" />
-     <Compile Include="Assets\Project\Scripts\EnableScenes.cs" />
-     <Compile Include="Assets\Project\Scripts\EyeMovements.cs" />
-     <Compile Include="Assets\Project\Scripts\EyeSettings.cs" />
-     <Compile Include="Assets\Project\Scripts\MovementDetection.cs" />
-     <Compile Include="Assets\Project\Scripts\Results.cs" />
-     <Compile Include="Assets\Project\Scripts\SceneLoader.cs" />
-     <Compile Include="Assets\Project\Scripts\StrabismusData.cs" />
-     <Compile Include="Assets\Project\Scripts\TempData.cs" />
-=======
->>>>>>> 9015eda29e70e94daf45a7488ea4474e6e2cba96
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.12f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -82,6 +69,8 @@
     <Compile Include="Assets\Project\Scripts\EnableScenes.cs" />
     <Compile Include="Assets\Project\Scripts\EyeMovements.cs" />
     <Compile Include="Assets\Project\Scripts\EyeSettings.cs" />
+    <Compile Include="Assets\Project\Scripts\MovementDetection.cs" />
+    <Compile Include="Assets\Project\Scripts\Results.cs" />
     <Compile Include="Assets\Project\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Project\Scripts\StrabismusData.cs" />
     <Compile Include="Assets\Project\Scripts\TargetMove.cs" />
