@@ -116,6 +116,7 @@ public class CoverUncover : MonoBehaviour
     void GenerateResult()
     {
         Debug.Log("Done!");
+        Debug.Log(strabismusType);
         if(GameObject.Find("Results") == null)
         {
             Instantiate(results);

@@ -52,14 +52,16 @@ public class EyeMovements : MonoBehaviour
     {
         isForia = eyeSettings.isForia;
         isTropia = eyeSettings.isTropia;
-
-        //deviation = transform.rotation;
+        
         if(isSquint) 
         {
             if(isTropia)
             {
                 angleOfDisalignment = eyeSettings.angleOfDisalignment;
-                deviation = Quaternion.Euler(0 , angleOfDisalignment, 0);
+                if(eyeSettings.typeOfDeviation == "endo" || eyeSettings.typeOfDeviation == "exo")
+                    deviation = Quaternion.Euler(0 , angleOfDisalignment, 0);
+                else 
+                    deviation = Quaternion.Euler(angleOfDisalignment, 0, 0);
             }
         }
     } 

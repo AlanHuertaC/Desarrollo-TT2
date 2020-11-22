@@ -83,17 +83,25 @@ public class MovementDetection : MonoBehaviour
     {
         if(maxDifference > 0)
         {
-            if(difference.y > 0.5 && eyeObserved.name == "REye" || difference.y > 0.5 && eyeObserved.name == "LEye")
+            if(Mathf.Abs(difference.y) < 300 && (difference.y > 0.5 && eyeObserved.name == "REye" || difference.y > 0.5 && eyeObserved.name == "LEye"))
             {
                 coverUncover.strabismusType = "Exo";
                 coverUncover.eye = eyeObserved.name;
-                Debug.Log(eyeObserved.name+": "+"Exo");
+                //Debug.Log(eyeObserved.name+": "+"Exo");
             }
-            else if(difference.y < -0.5 && eyeObserved.name == "LEye" || difference.y < -0.5 && eyeObserved.name == "REye")
+            else if(Mathf.Abs(difference.y) < 300 && (difference.y < -0.5 && eyeObserved.name == "LEye" || difference.y < -0.5 && eyeObserved.name == "REye"))
             {
                 coverUncover.strabismusType = "Endo";
                 coverUncover.eye = eyeObserved.name;
-                Debug.Log(eyeObserved.name+": "+"Endo");
+                //Debug.Log(eyeObserved.name+": "+"Endo");
+            }
+            else if(Mathf.Abs(difference.x) < 300 && difference.x < -0.5)
+            {    coverUncover.strabismusType = "Hiper";
+                coverUncover.eye = eyeObserved.name;    
+            }
+            else if(Mathf.Abs(difference.x) < 300 && difference.x < 0.5)
+            {    coverUncover.strabismusType = "Hipo";
+                coverUncover.eye = eyeObserved.name;    
             }
         }
     }
