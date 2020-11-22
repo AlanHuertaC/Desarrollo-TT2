@@ -36,13 +36,16 @@ public class TargetMove : MonoBehaviour
         eulerAngX = eyesSet.transform.GetChild(1).localEulerAngles.x;
         eulerAngY = eyesSet.transform.GetChild(1).localEulerAngles.y;
         eulerAngZ = eyesSet.transform.GetChild(1).localEulerAngles.z;
+        //valorinicial = eyesSet.transform.GetChild(1).localEulerAngles.y;
+        //Debug.Log(valorinicial);
         if (eulerAngY < 30f)
         {
             Debug.Log("Menor que 30");
         }
-        else if (p == 0)
+        else if (p < 100)
         {
-            valorinicial = eyesSet.transform.GetChild(1).localEulerAngles.y;
+            valorinicial = eulerAngY;
+            //Debug.Log("Wenas :v " + valorinicial);
             p++;
         }
         Movement();
