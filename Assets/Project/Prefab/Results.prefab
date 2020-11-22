@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 781059088008911176}
   m_Layer: 0
   m_Name: Results
-  m_TagString: Untagged
+  m_TagString: Results
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd393aabcc7c1b24cb3b72efee8369b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  strabismusType: 
+  eye: 
+  angleOfDisalignment: 0
