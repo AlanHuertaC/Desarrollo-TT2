@@ -23,6 +23,7 @@ public class EyeMovements : MonoBehaviour
 
     [SerializeField]GameObject pupil; // Referencia a la pupila del ojo.
     [SerializeField]EyeMovements fellowEye; // Referencia del otro ojo (usada para determinar el comportamiento)
+    [SerializeField] RotationReference reference;
 
     public EyeMovements FellowEye() { {return fellowEye;}}
     Quaternion fellowEyeRotation; // Referencia del Quaternion del otro ojo
@@ -57,7 +58,12 @@ public class EyeMovements : MonoBehaviour
         {
             if(isTropia)
             {
-                angleOfDisalignment = eyeSettings.angleOfDisalignment;
+                angleOfDisalignment = 
+                    gameObject.name == "LEye" && eyeSettings.typeOfDeviation == "exo" || 
+                    gameObject.name == "REye"&& eyeSettings.typeOfDeviation == "endo" || 
+                    eyeSettings.typeOfDeviation == "hiper"   
+                    ? eyeSettings.angleOfDisalignment*(-1) : eyeSettings.angleOfDisalignment;
+
                 if(eyeSettings.typeOfDeviation == "endo" || eyeSettings.typeOfDeviation == "exo")
                     deviation = Quaternion.Euler(0 , angleOfDisalignment, 0);
                 else 
@@ -118,27 +124,28 @@ public class EyeMovements : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turningSpeed);
     }
 
-    Quaternion calculateGap()
+    Quaternion calculateGap() // Para el ojo desviado. Se usa cuando el ojo sano ve el objetivo sin importar si el desviado puede o no verlo.
     {
-        float x = fellowEye.transform.rotation.eulerAngles.x + deviation.eulerAngles.x;
-        float y = fellowEye.transform.rotation.eulerAngles.y + deviation.eulerAngles.y;
+        float x = reference.transform.rotation.eulerAngles.x + deviation.eulerAngles.x;
+        float y = reference.transform.rotation.eulerAngles.y + deviation.eulerAngles.y;
         
         Quaternion gap = Quaternion.Euler(x,y,0);
         return gap;
     }
 
-    Quaternion calculateGap(Quaternion fellowDev)
+    Quaternion calculateGap(Quaternion fellowDev) // Para el ojo sano. Se usa cuando el ojo desviado ve el objetivo y el sano no.
     {
         float x = fellowEye.transform.rotation.eulerAngles.x - fellowDev.eulerAngles.x;
+
         float y = fellowEye.transform.rotation.eulerAngles.y - fellowDev.eulerAngles.y;
+        /*if(eyeSettings.typeOfDeviation == "endo")
+        {
+            y = fellowEye.transform.rotation.eulerAngles.y + fellowDev.eulerAngles.y;
+
+        }*/
         
         Quaternion gap = Quaternion.Euler(x,y,0);
         return gap;
-    }
-
-    void TurnToInitial()
-    {
-        transform.rotation = Quaternion.Slerp(transform.rotation, deviation, Time.deltaTime * turningSpeed);
     }
 
     bool HaveLineOfSightRayCast()
@@ -146,13 +153,13 @@ public class EyeMovements : MonoBehaviour
         RaycastHit hit;
         Vector3 direction = target.position - pupil.transform.position;
         
-        if(Physics.Raycast(pupil.transform.position, direction, out hit, 50f))
+        if(Physics.Raycast(pupil.transform.position, direction, out hit, 500f))
         {
 
             if(hit.transform.CompareTag("Target"))
             {
                 //Debug.Log("Hit: " + hit.GetType());
-                Debug.DrawRay(pupil.transform.position, direction , Color.blue);
+                //Debug.DrawRay(pupil.transform.position, direction , Color.blue);
                 //Debug.Log(hit.transform.eulerAngles);
                 return true;
             }

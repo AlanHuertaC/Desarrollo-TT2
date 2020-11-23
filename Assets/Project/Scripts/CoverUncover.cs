@@ -126,6 +126,10 @@ public class CoverUncover : MonoBehaviour
         Results data = results.GetComponent<Results>();
         data.strabismusType = strabismusType;
         data.eye = eye;
+        if(strabismusType == "endo" && eye == "REye" || strabismusType == "exo" && eye == "LEye" )
+            data.direction = "left";
+        else if(strabismusType == "exo" && eye == "REye" || strabismusType == "endo" && eye == "LEye")
+            data.direction = "right";
     }
 
 

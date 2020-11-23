@@ -46,9 +46,7 @@ public class EyeSettings : MonoBehaviour
         isForia = data.isForia;
         isTropia = data.isTropia;
         typeOfDeviation = data.typeOfDeviation;
-        angleOfDisalignment = 
-                leftEye.isSquint && typeOfDeviation == "exo" || rightEye.isSquint && typeOfDeviation == "endo" || typeOfDeviation == "hiper"   
-                                ? data.angleOfDisalignment*(-1) : data.angleOfDisalignment;
+        angleOfDisalignment = data.angleOfDisalignment;
     }
 
 }

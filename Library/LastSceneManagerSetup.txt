@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Project/Scenes/MainMenu.unity
+- path: Assets/Project/Scenes/MeasureDeviation.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
