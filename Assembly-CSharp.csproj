@@ -40,23 +40,24 @@
      <Compile Include="Assets\Project\Scripts\EyeMovements.cs" />
      <Compile Include="Assets\Project\Scripts\CameraSwitch.cs" />
      <Compile Include="Assets\Project\Scripts\StrabismusData.cs" />
+     <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\First Person Player\MouseLook.cs" />
+     <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Doors\opencloseDoor.cs" />
      <Compile Include="Assets\Project\Scripts\TargetMove.cs" />
      <Compile Include="Assets\Project\Scripts\SceneLoader.cs" />
      <Compile Include="Assets\Project\Scripts\TempData.cs" />
+     <Compile Include="Assets\Soja Exiles\Doctors Office\Scenes\SceneSwitch.cs" />
      <Compile Include="Assets\Project\Scripts\MovementDetection.cs" />
      <Compile Include="Assets\Project\Scripts\CoverUncover.cs" />
-     <Compile Include="Assets\Project\Scripts\EyeSettings.cs" />
-     <Compile Include="Assets\Project\Scripts\Results.cs" />
-     <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\First Person Player\MouseLook.cs" />
-     <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Doors\opencloseDoor.cs" />
-     <Compile Include="Assets\Soja Exiles\Doctors Office\Scenes\SceneSwitch.cs" />
      <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Doors\opencloseDoor1.cs" />
+     <Compile Include="Assets\Project\Scripts\EyeSettings.cs" />
      <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Windows\opencloseWindow.cs" />
      <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\First Person Player\PlayerMovement.cs" />
      <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Drawer\X Axis\Drawer_Pull_X.cs" />
      <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Drawer\Z Axis\Drawer_Pull_Z.cs" />
+     <Compile Include="Assets\Project\Scripts\Results.cs" />
      <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Windows\opencloseWindow1.cs" />
      <Compile Include="Assets\Soja Exiles\Doctors Office\Scripts &amp; Animations\FanRotation.cs" />
+     <Compile Include="Assets\Project\Scripts\CanvasResults.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/2020.1.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -249,14 +250,14 @@
     <Reference Include="DOTween">
         <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Analytics.Editor">
+        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.Tracker">
         <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
         <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Editor">
-        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:/Program Files/Unity/2020.1.0f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -606,8 +607,23 @@
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Monetization">
+        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.multiplayer-hlapi.Editor">
+        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids">
+        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -618,33 +634,6 @@
     <Reference Include="Unity.Timeline">
         <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Monetization">
-        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Editor">
-        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProGrids">
-        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProGrids.Editor">
-        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
         <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
@@ -653,6 +642,9 @@
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
         <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
         <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
@@ -669,11 +661,20 @@
     <Reference Include="UnityEngine.SpatialTracking">
         <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualStudio.Editor">
+        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
         <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
         <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+        <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
         <HintPath>C:/Users/Alan Huerta Cortés/OneDrive/Escritorio/TTAlan/TT2/Desarrollo-TT2/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
