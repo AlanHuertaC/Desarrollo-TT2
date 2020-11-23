@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class TargetMove : MonoBehaviour
@@ -22,9 +23,12 @@ public class TargetMove : MonoBehaviour
 
     [SerializeField] float movementSpeed = 5f; 
     [SerializeField] float margenError = 0.7f;
+    [SerializeField] double angulo = 0;
 
     Vector3 movmentDirection; //************* Guarda hacia qué lado debe moverse.
     Transform eye;
+
+    bool moving = false;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +59,7 @@ public class TargetMove : MonoBehaviour
         //eulerAngY + 2f < valorinicial &&
         OccluderMovement();
         Movement();
+        if(!moving && sectime == 1 && Mathf.Abs(eulerAngY - valorinicial) <= margenError)CalcularAngulo();
     }
 
     void Movement()
@@ -62,8 +67,10 @@ public class TargetMove : MonoBehaviour
         if (sectime == 1 && Mathf.Abs(eulerAngY - valorinicial) > margenError)
         {
             //El tarjet se movera hasta que la rotacion del ojo vuelva a la original
-            transform.Translate(movmentDirection * Time.deltaTime * movementSpeed); //////************* 
+            transform.Translate(movmentDirection * Time.deltaTime * movementSpeed); //////*************
+            moving = true;
         }
+        else moving  = false;
             /*else if (sectime == 1 && eulerAngY > valorinicial + 2.5f)
                 transform.Translate(movmentDirection * Time.deltaTime * movementSpeed); //*****************}*
         /*
@@ -91,12 +98,19 @@ public class TargetMove : MonoBehaviour
 
     void CalcularAngulo()
     {
-        float dt = 24.2f * transform.position.x;
+        double dt = 24.2 * transform.position.x;
         if (dt < 0)
             dt *= -1f;
-        float Td = 400f;
-        float PD = 24.2f * 2.60f;
-        float angulo = Mathf.Atan((2f * dt - PD) / 2f * Td) + Mathf.Atan(PD/(2f * Td));
+        Debug.Log("DT = "+dt);
+        double Td = 6000; // 6m
+        double PD = 63.5; // 63.5mm
+        double datos = 2 * dt;
+        angulo = Math.Atan((2 * dt - PD) / (2 * Td)) + Math.Atan(PD / (2*Td));
+        Debug.Log("Radianes: " +angulo);
+        angulo = angulo*(180/Math.PI);
+        Debug.Log("Grados: " + angulo);
+
+        results.angleOfDisalignment = (float)angulo;
     }
 
 
