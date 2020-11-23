@@ -21,6 +21,7 @@ public class TargetMove : MonoBehaviour
     float valorinicial;
 
     [SerializeField] float movementSpeed = 5f; 
+    [SerializeField] float margenError = 0.7f;
 
     Vector3 movmentDirection; //************* Guarda hacia qué lado debe moverse.
     Transform eye;
@@ -52,47 +53,28 @@ public class TargetMove : MonoBehaviour
         eulerAngZ = eye.localEulerAngles.z;
 
         //eulerAngY + 2f < valorinicial &&
-        if (eulerAngY + 2f != valorinicial && primtime >= 161)
-        {
-            Debug.Log("Menor que 30");
-            sectime = 1;
-        }
-        else if (primtime < 160)
-        {
-            valorinicial = eulerAngY;
-            Debug.Log("Wenas :v " + valorinicial);
-            primtime++;
-        }
-        else if (primtime == 160)
-        {
-            if(results.eye == "LEye") pared.transform.position = new Vector3(1.42f, 0.816f, 0.8f); ///****
-            else pared.transform.position = new Vector3(-1.42f, 0.816f, 0.8f); //*****
-            primtime++;
-        }
+        OccluderMovement();
         Movement();
     }
 
     void Movement()
     {
-        if(results.direction == "right")
-        {    if (sectime == 1 && eulerAngY < valorinicial)
-            {
-                //El tarjet se movera hasta que la rotacion del ojo vuelva a la original
-                transform.Translate(movmentDirection * Time.deltaTime * movementSpeed); //////************* 
-            }
-            else if (sectime == 1 && eulerAngY > valorinicial + 2.5f)
-                transform.Translate(movmentDirection * Time.deltaTime * movementSpeed); //*****************}
-        }
-        else
+        if (sectime == 1 && Mathf.Abs(eulerAngY - valorinicial) > margenError)
         {
-            if (sectime == 1 && eulerAngY > valorinicial)
+            //El tarjet se movera hasta que la rotacion del ojo vuelva a la original
+            transform.Translate(movmentDirection * Time.deltaTime * movementSpeed); //////************* 
+        }
+            /*else if (sectime == 1 && eulerAngY > valorinicial + 2.5f)
+                transform.Translate(movmentDirection * Time.deltaTime * movementSpeed); //*****************}*
+        /*
+            if (sectime == 1 && Mathf.Abs(eulerAngY - valorinicial) > 0.07)
             {
                 //El tarjet se movera hasta que la rotacion del ojo vuelva a la original
                 transform.Translate(movmentDirection * Time.deltaTime * movementSpeed); //////************* 
             }
-            else if (sectime == 1 && eulerAngY > valorinicial + 2.5f)
-                transform.Translate(movmentDirection * Time.deltaTime * movementSpeed); //*****************}
-        } 
+            /*else if (sectime == 1 && eulerAngY > valorinicial + 2.5f)
+                transform.Translate(movmentDirection * Time.deltaTime * movementSpeed); //*****************}*/
+     
 
         /* SÓLO NO JALA LA EXO DEL OJO IZQUIERO XD */
         
@@ -123,6 +105,39 @@ public class TargetMove : MonoBehaviour
         /*En results ya se indicará hacia qué lado moverse*/
         if(results.direction == "right") movmentDirection = Vector3.right;
         else movmentDirection = Vector3.left;
+    }
+
+
+    void OccluderMovement()
+    {
+        if (eulerAngY + 2f != valorinicial && primtime >= 301) // Paso 3. Empezar a mover el objetivo
+        {
+            Debug.Log("Menor que 30");
+            sectime = 1;
+        }
+        else if (primtime < 150) // Espacio entre que empieza la escena y empezar el algoritmo.
+        {
+            //Debug.Log("Wenas :v " + valorinicial);
+            primtime++;
+        }
+        else if (primtime == 150) // Paso 1. Cerrar vista al ojo sano y dejar ver al ojo desviado.
+        {
+            if(results.eye == "LEye") pared.transform.position = new Vector3(1.42f, 0.816f, 0.8f); ///****
+            else pared.transform.position = new Vector3(-1.42f, 0.816f, 0.8f); //*****
+            primtime++;
+        }
+        else if(primtime > 150 && primtime < 300) /// Guardar la posición del paso 1 como posición inicial
+        {
+            valorinicial = eulerAngY;
+            primtime++;
+        }
+        else if(primtime == 300) /// Paso 2. Cerrar la vista al ojo desviado y abrir al ojo sano.
+        {
+            if(results.eye == "LEye") pared.transform.position = new Vector3(-1.42f, 0.816f, 0.8f); ///****
+            else pared.transform.position = new Vector3(1.42f, 0.816f, 0.8f); //*****
+            primtime++;
+        }
+
     }
 
 }

@@ -215,6 +215,7 @@ MonoBehaviour:
   eulerAngZ: 0
   valorinicial: 0
   movementSpeed: 5
+  margenError: 0.03
 --- !u!1 &284354231
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,11 +406,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1786032818, guid: 6f2c5075f9933f444a9f1b2cd3d4f675, type: 3}
       propertyPath: angleOfDisalignment
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1786032818, guid: 6f2c5075f9933f444a9f1b2cd3d4f675, type: 3}
       propertyPath: typeOfDeviation
-      value: exo
+      value: endo
       objectReference: {fileID: 0}
     - target: {fileID: 2115962688, guid: 6f2c5075f9933f444a9f1b2cd3d4f675, type: 3}
       propertyPath: reference
@@ -826,7 +827,7 @@ PrefabInstance:
     - target: {fileID: 781059088008911176, guid: e282a87b1264676419a22eb528a8991b,
         type: 3}
       propertyPath: strabismusType
-      value: exo
+      value: endo
       objectReference: {fileID: 0}
     - target: {fileID: 3303273211473270669, guid: e282a87b1264676419a22eb528a8991b,
         type: 3}
