@@ -1679,6 +1679,31 @@ PrefabInstance:
       propertyPath: isSquint
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9162390303355279452, guid: 6f2c5075f9933f444a9f1b2cd3d4f675,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162390303355279452, guid: 6f2c5075f9933f444a9f1b2cd3d4f675,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162390303355279452, guid: 6f2c5075f9933f444a9f1b2cd3d4f675,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162390303355279452, guid: 6f2c5075f9933f444a9f1b2cd3d4f675,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162390303355279452, guid: 6f2c5075f9933f444a9f1b2cd3d4f675,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9162390303727151438, guid: 6f2c5075f9933f444a9f1b2cd3d4f675,
         type: 3}
       propertyPath: m_LocalPosition.x
