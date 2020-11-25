@@ -16,9 +16,13 @@ public class MovementDetection : MonoBehaviour
     string strabismusType;
     float maxDifference = 0;
 
+    int layer = 9;
+    int layerMask;
+
     void Start()
     {
         eyeObservedScript = eyeObserved.GetComponent<EyeMovements>();
+        layerMask = 1 << layer;
     }
     // Update is called once per frame
     void Update()
@@ -39,10 +43,9 @@ public class MovementDetection : MonoBehaviour
 
     void UpdateAnglesOpen()
     {
-        //Debug.Log("Angles Open");
         RaycastHit hit;
         Vector3 direction = eyeObserved.transform.position - transform.position;
-
+        Debug.Log(direction);
         if(Physics.Raycast(transform.position, direction, out hit, 50f))
         {
             Debug.DrawRay(transform.position, direction, Color.green);
@@ -55,7 +58,7 @@ public class MovementDetection : MonoBehaviour
         //Debug.Log("Angles CLosed");
         RaycastHit hit;
         Vector3 direction = eyeObserved.transform.position - transform.position;
-
+        //Debug.Log(direction);
         if(Physics.Raycast(transform.position, direction, out hit, 50f))
         {
             Debug.DrawRay(transform.position, direction, Color.red);

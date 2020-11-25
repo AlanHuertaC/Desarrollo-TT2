@@ -9,9 +9,9 @@ using UnityEngine;
 */
 public class EyeMovements : MonoBehaviour
 {
-    Transform target; // referencia a Transform del objetivo
+    [SerializeField] Transform target; // referencia a Transform del objetivo
 
-    EyeSettings eyeSettings; // referencia al objeto de la clase EyeSettings para obtener los datos del estrabismo
+    [SerializeField]EyeSettings eyeSettings; // referencia al objeto de la clase EyeSettings para obtener los datos del estrabismo
     public Quaternion deviation; //Write getter XD (pa no tener todo publico) Esta variable guarda la desviación (rotación) que debe tener el ojo
 
 
@@ -33,8 +33,8 @@ public class EyeMovements : MonoBehaviour
 
     void Start()
     {
-        eyeSettings = GameObject.Find("Eyes").GetComponent<EyeSettings>(); 
-        target = GameObject.FindGameObjectWithTag("Target").transform;
+        //eyeSettings = GameObject.FindGameObjectWithTag("Eyes").GetComponent<EyeSettings>(); 
+        //target = GameObject.Find("Target").transform;
 
         // Set Deviation. Se llama para inicializar los parámetros de cada ojo
         SetDeviation();
@@ -151,9 +151,9 @@ public class EyeMovements : MonoBehaviour
     bool HaveLineOfSightRayCast()
     {
         RaycastHit hit;
-        Vector3 direction = target.position - pupil.transform.position;
+        Vector3 direction = target.position - pupil.transform.position; ////////////////////////////////****
         
-        if(Physics.Raycast(pupil.transform.position, direction, out hit, 500f))
+        if(Physics.Raycast(pupil.transform.position, direction, out hit, 500f))////////////***********
         {
 
             if(hit.transform.CompareTag("Target"))

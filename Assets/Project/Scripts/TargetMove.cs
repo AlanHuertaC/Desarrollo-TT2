@@ -124,31 +124,31 @@ public class TargetMove : MonoBehaviour
 
     void OccluderMovement()
     {
-        if (eulerAngY + 2f != valorinicial && primtime >= 301) // Paso 3. Empezar a mover el objetivo
+        if (eulerAngY + 2f != valorinicial && primtime >= 401) // Paso 3. Empezar a mover el objetivo
         {
             Debug.Log("Menor que 30");
             sectime = 1;
         }
-        else if (primtime < 150) // Espacio entre que empieza la escena y empezar el algoritmo.
+        else if (primtime < 200) // Espacio entre que empieza la escena y empezar el algoritmo.
         {
             //Debug.Log("Wenas :v " + valorinicial);
             primtime++;
         }
-        else if (primtime == 150) // Paso 1. Cerrar vista al ojo sano y dejar ver al ojo desviado.
+        else if (primtime == 200) // Paso 1. Cerrar vista al ojo sano y dejar ver al ojo desviado.
         {
-            if(results.eye == "LEye") pared.transform.position = new Vector3(1.42f, 0.816f, 0.8f); ///****
-            else pared.transform.position = new Vector3(-1.42f, 0.816f, 0.8f); //*****
+            if(results.eye == "LEye") pared.transform.position = new Vector3(1.42f, 0.816f, 1f); ///****
+            else pared.transform.position = new Vector3(-1.42f, 0.816f, 1f); //*****
             primtime++;
         }
-        else if(primtime > 150 && primtime < 300) /// Guardar la posición del paso 1 como posición inicial
+        else if(primtime > 150 && primtime < 400) /// Guardar la posición del paso 1 como posición inicial
         {
             valorinicial = eulerAngY;
             primtime++;
         }
-        else if(primtime == 300) /// Paso 2. Cerrar la vista al ojo desviado y abrir al ojo sano.
+        else if(primtime == 400) /// Paso 2. Cerrar la vista al ojo desviado y abrir al ojo sano.
         {
-            if(results.eye == "LEye") pared.transform.position = new Vector3(-1.42f, 0.816f, 0.8f); ///****
-            else pared.transform.position = new Vector3(1.42f, 0.816f, 0.8f); //*****
+            if(results.eye == "LEye") pared.transform.position = new Vector3(-1.42f, 0.816f, 1f); ///****
+            else pared.transform.position = new Vector3(1.42f, 0.816f, 1f); //*****
             primtime++;
         }
 

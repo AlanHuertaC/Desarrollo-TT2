@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotationReference : MonoBehaviour
 {
-   Transform target;
+   [SerializeField]Transform target;
    int layer = 8;
    int layerMask;
 
@@ -12,7 +12,7 @@ public class RotationReference : MonoBehaviour
 
    void Start()
    {
-       target = GameObject.FindGameObjectWithTag("Target").transform;
+       //target = GameObject.FindGameObjectWithTag("Target").transform;
        layerMask = 1 << layer;
    }
 
