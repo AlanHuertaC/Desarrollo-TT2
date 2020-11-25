@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Target
-  - Panel
+  - Results
   layers:
   - Default
   - TransparentFX
@@ -15,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Reference
   - 
   - 
   - 

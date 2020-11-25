@@ -9,6 +9,8 @@ public class Results : MonoBehaviour
 
     public float angleOfDisalignment;
 
+    public string direction;
+
     static Results instance;
     
     void Start()

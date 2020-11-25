@@ -17,8 +17,7 @@ public class TempData : MonoBehaviour
     public float maxAngle = 25f;
 
     public float angleOfDisalignment;
-    public bool endo;
-    public bool exo;
+    public string typeOfDeviation;
     public bool isForia;
     public bool isTropia;
 
@@ -58,14 +57,21 @@ public class TempData : MonoBehaviour
         
         if(input == 0)
         {   
-            endo = true;
-            exo = false;
+            typeOfDeviation = "endo";
         }
         else if(input == 1)
         {
-            endo = false;
-            exo = true;
+            typeOfDeviation = "exo";
         }
+        else if(input == 2)
+        {
+            typeOfDeviation = "hiper";
+        }
+        else
+        {
+            typeOfDeviation = "hipo";
+        }
+
     }
 
     public void OnAngleChange(float input)
@@ -102,12 +108,12 @@ public class TempData : MonoBehaviour
         random =Random.value; 
         if(random > 0.5) 
         {
-            endo = true;
+            typeOfDeviation = "endo";
             type.value = 0;
         }
         else 
         {
-            exo = true; 
+            typeOfDeviation = "exo";
             type.value = 1;
         }       
 
@@ -117,14 +123,13 @@ public class TempData : MonoBehaviour
 
     public void SaveData()
     {
-        StrabismusData tmp = GameObject.Find("StrabismusData").GetComponent<StrabismusData>();
-        tmp.lefSquint = this.lefSquint;
-        tmp.rightSquint = this.rightSquint;
-        tmp.endo = this.endo;
-        tmp.exo = this.exo;
-        tmp.isForia = false; //////*******FOR NOW ... maybe (otherwise it'll be removed)
-        tmp.isTropia = true; //////*******FOR NOW ... maybe (otherwise it'll be removed)
-        tmp.angleOfDisalignment = this.angleOfDisalignment;
+        StrabismusData data = GameObject.Find("StrabismusData").GetComponent<StrabismusData>();
+        data.lefSquint = this.lefSquint;
+        data.rightSquint = this.rightSquint;
+        data.typeOfDeviation = typeOfDeviation;
+        data.isForia = false; //////*******FOR NOW ... maybe (otherwise it'll be removed)
+        data.isTropia = true; //////*******FOR NOW ... maybe (otherwise it'll be removed)
+        data.angleOfDisalignment = this.angleOfDisalignment;
         
         SceneLoader sl = GameObject.Find("SceneLoader").GetComponent<SceneLoader>();
         sl.LoadScene("MainMenu");

@@ -1,6 +1,6 @@
 	Unidades en milímetros 		Unidades en Unity
 
-IPD  		62 milimeters			-2.6198
+IPD  		63.5 milimeters			-2.6239
 
 
 Diámetro del ojo:
@@ -11,7 +11,10 @@ Depth 	(Z)	23.8 mm				- 0.9834
 
 
 Distancia 
-del objetivo  (40cm = 400mm) 			-16.52
+del objetivo  	6m(6000mm)			- 247.9338
+
+Tamaño 		15cm x 20cm			- 6.1983 x 8.2644
+del objetivo  (150mm x 200 cmm)
 
 
 

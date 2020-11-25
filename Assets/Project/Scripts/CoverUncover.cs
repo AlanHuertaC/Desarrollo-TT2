@@ -115,14 +115,21 @@ public class CoverUncover : MonoBehaviour
 
     void GenerateResult()
     {
+        Debug.Log("Done!");
+        Debug.Log(strabismusType);
         if(GameObject.Find("Results") == null)
         {
             Instantiate(results);
         }
-        results = GameObject.Find("Results");
+        results =   GameObject.Find("Results(Clone)");
+
         Results data = results.GetComponent<Results>();
         data.strabismusType = strabismusType;
         data.eye = eye;
+        if(strabismusType == "endo" && eye == "REye" || strabismusType == "exo" && eye == "LEye" )
+            data.direction = "right";
+        else if(strabismusType == "exo" && eye == "REye" || strabismusType == "endo" && eye == "LEye")
+            data.direction = "left";
     }
 
 

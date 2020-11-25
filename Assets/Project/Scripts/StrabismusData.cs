@@ -14,8 +14,7 @@ public class StrabismusData : MonoBehaviour
 
 
     public float angleOfDisalignment;
-    public bool endo;
-    public bool exo;
+    public string typeOfDeviation;
     public bool isForia;
     public bool isTropia;
 

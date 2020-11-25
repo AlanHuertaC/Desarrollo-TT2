@@ -29,9 +29,7 @@ public class EyeSettings : MonoBehaviour
     public float angleOfDisalignment;
 
 
-    public bool endo;
-    public bool exo;
-    
+    public string typeOfDeviation;
 
     public bool isForia;
     public bool isTropia;
@@ -47,9 +45,8 @@ public class EyeSettings : MonoBehaviour
         rightEye.isSquint = data.rightSquint;
         isForia = data.isForia;
         isTropia = data.isTropia;
-        endo = data.endo;
-        exo = data.exo;
-        angleOfDisalignment = leftEye.isSquint && exo || rightEye && endo  ? data.angleOfDisalignment*(-1) : data.angleOfDisalignment;
+        typeOfDeviation = data.typeOfDeviation;
+        angleOfDisalignment = data.angleOfDisalignment;
     }
 
 }
