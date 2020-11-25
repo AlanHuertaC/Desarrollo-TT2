@@ -45,7 +45,7 @@ public class MovementDetection : MonoBehaviour
     {
         RaycastHit hit;
         Vector3 direction = eyeObserved.transform.position - transform.position;
-        Debug.Log(direction);
+        //Debug.Log(direction);
         if(Physics.Raycast(transform.position, direction, out hit, 50f))
         {
             Debug.DrawRay(transform.position, direction, Color.green);
