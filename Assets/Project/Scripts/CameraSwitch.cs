@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class CameraSwitch : MonoBehaviour
 {
-    GameObject MainCamera;
+    GameObject MainCamera; 
     //GameObject LeftEyeCam;
     //GameObject RightEyeCam;
     GameObject BothEyes;
