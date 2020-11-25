@@ -34,11 +34,11 @@ public class EyeSettings : MonoBehaviour
     public bool isForia;
     public bool isTropia;
 
-    void Awake()
+    /* void Awake()
     {
         data = GameObject.Find("StrabismusData").GetComponent<StrabismusData>();
         SetStrabismus();
-    }
+    } */
     void SetStrabismus()
     {
         leftEye.isSquint = data.lefSquint;
