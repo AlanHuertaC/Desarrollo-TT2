@@ -17,8 +17,6 @@ public class CoverUncover : MonoBehaviour
 
     EyeMovements left;
     EyeMovements right;
-
-
      Vector3 leftFront;
     Vector3 leftBellow;
     Vector3 rightFront;
