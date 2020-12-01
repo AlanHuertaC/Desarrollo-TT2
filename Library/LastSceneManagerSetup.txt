@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Project/Scenes/SeeResults.unity
+- path: Assets/Soja Exiles/Doctors Office/Scenes/Structure_01.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

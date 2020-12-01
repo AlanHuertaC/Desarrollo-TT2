@@ -46,7 +46,7 @@ public class ConsultasSQL
 
         cmd.CommandText = "INSERT INTO ojo (desviacion_der,desviacion_izq,dioptrias_prismaticas,Paciente_idPaciente) VALUES(?desviacion_der,?desviacion_izq,?dioptrias_prismaticas,?Paciente_idPaciente)";
         cmd.Parameters.Add("?desviacion_der", MySqlDbType.Float).Value = angleValueR;
-        cmd.Parameters.Add("?desviacion_ izq", MySqlDbType.Float).Value = angleValueL;
+        cmd.Parameters.Add("?desviacion_izq", MySqlDbType.Float).Value = angleValueL;
         cmd.Parameters.Add("?dioptrias_prismaticas", MySqlDbType.Float).Value = prismas;
         cmd.Parameters.Add("?Paciente_idPaciente", MySqlDbType.Int32).Value = idPaciente;
         cmd.ExecuteNonQuery();
