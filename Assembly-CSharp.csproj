@@ -87,6 +87,7 @@
      <Compile Include="Assets\HumanShaderPack\Scripts\materialPicker.cs" />
      <Compile Include="Assets\Project\Scripts\ConsultasSQL.cs" />
      <Compile Include="Assets\Soja Exiles\Doctors Office\Scripts &amp; Animations\FanRotation.cs" />
+     <Compile Include="Assets\Project\Scripts\Exit.cs" />
      <None Include="Assets\HumanShaderPack\HairShader2\Shaders\HairShader2_AS_RRF_Mod1_FrontCulled.shader" />
      <None Include="Assets\HumanShaderPack\HairShader2\RnD\Shaders\HairShader2_DoublePass_A.shader" />
      <None Include="Assets\HumanShaderPack\Simple_Skin_Shader\Shaders\WorkInProgess\SkinShader_Hyper.shader" />
