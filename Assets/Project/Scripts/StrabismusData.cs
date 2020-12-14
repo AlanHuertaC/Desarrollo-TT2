@@ -21,7 +21,7 @@ public class StrabismusData : MonoBehaviour
     public bool lefSquint;
     public bool rightSquint;
     
-
+    public bool measurable;
     static StrabismusData instance;
     
     void Start()

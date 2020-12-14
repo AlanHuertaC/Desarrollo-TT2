@@ -31,6 +31,13 @@ public class TempData : MonoBehaviour
 
     [SerializeField] GameObject save;
     
+    void Start()
+    {
+        if(GameObject.Find("Results(Clone)") != null)
+        {
+            Destroy(GameObject.Find("Results(Clone)"));
+        }
+    }
     void Update()
     {
         OnChangeEye(chooseEye.value);
@@ -130,6 +137,8 @@ public class TempData : MonoBehaviour
         data.isForia = false; //////*******FOR NOW ... maybe (otherwise it'll be removed)
         data.isTropia = true; //////*******FOR NOW ... maybe (otherwise it'll be removed)
         data.angleOfDisalignment = this.angleOfDisalignment;
+        if(typeOfDeviation == "hiper" || typeOfDeviation == "hipo") data.measurable = false;
+        else data.measurable = true;
         
         SceneLoader sl = GameObject.Find("SceneLoader").GetComponent<SceneLoader>();
         sl.LoadScene("MainMenu");

@@ -17,12 +17,14 @@ public class CoverUncover : MonoBehaviour
 
     EyeMovements left;
     EyeMovements right;
-     Vector3 leftFront;
-    Vector3 leftBellow;
-    Vector3 rightFront;
-    Vector3 rightBellow;
+     Vector3 leftOn;
+    Vector3 leftOff;
+    Vector3 rightOn;
+    Vector3 rightOff;
 
     Vector3[] path;
+    Vector3[] path2;
+    
     [SerializeField] float duration;
     //[SerializeField] PathMode pathMode;
     //[SerializeField] PathType pathType;
@@ -58,25 +60,27 @@ public class CoverUncover : MonoBehaviour
 
     void SetParades()
     {
-        leftFront = new Vector3(-1.3099f, 0.5f, 1);
-        leftBellow = new Vector3 (-1.3099f, -1, 1);
-        rightFront = new Vector3(1.3099f, 0.5f, 1);
-        rightBellow = new Vector3 (1.3099f, -1, 1);
+        leftOn = new Vector3(-1.95f, -0.34f, 1.35f);
+        leftOff = new Vector3 (-2.51f, -1.2f, 1.35f);
+        rightOn = new Vector3(1.95f, -0.34f, 1.35f);
+        rightOff = new Vector3 (2.51f, -1.2f, 1.35f);
 
-        path = new Vector3 [13];
-        path[0] = leftFront;
-        path[1] = leftBellow;
-        path[2] = leftFront;
-        path[3] = leftBellow;
-        path[4] = leftFront;
-        path[5] = leftBellow;
-        path[6] = rightBellow;
-        path[7] = rightFront;
-        path[8] = rightBellow;
-        path[9] = rightFront;
-        path[10] = rightBellow;
-        path[11] = rightFront;
-        path[12] = rightBellow;
+        path = new Vector3 [6];
+        path2 = new Vector3 [6];
+
+        path[0] = leftOn;
+        path[1] = leftOff;
+        path[2] = leftOn;
+        path[3] = leftOff;
+        path[4] = leftOn;
+        path[5] = leftOff;
+
+        path2[0] = rightOn;
+        path2[1] = rightOff;
+        path2[2] = rightOn;
+        path2[3] = rightOff;
+        path2[4] = rightOn;
+        path2[5] = rightOff;
     }
 
 
@@ -85,7 +89,12 @@ public class CoverUncover : MonoBehaviour
         play = true;
         Transform occluderTransform = occluder.transform;
         //tween = occluderTransform.DOPath(path,duration,pathType,pathMode,10);
-        tween = occluderTransform.DOPath(path,duration).SetEase(moveEase).OnComplete(GenerateResult);
+        //tween = occluderTransform.DOPath(path,duration).SetEase(moveEase).OnComplete(GenerateResult);
+        tween = DOTween.Sequence()
+            .Append(occluderTransform.DOPath(path,duration).SetEase(moveEase).OnComplete(DisableCollider))
+            .Append(occluderTransform.DOMove(new Vector3(0.79f,-0.46f,3.44f), 2f))
+            .Append(occluderTransform.DORotate(new Vector3(0,0,33f),1f).OnComplete(EnableCollider))
+            .Append(occluderTransform.DOPath(path2,duration).SetEase(moveEase).OnComplete(GenerateResult));
 
     }
 
@@ -111,8 +120,27 @@ public class CoverUncover : MonoBehaviour
         }
     }
 
+    void DisableCollider()
+    {
+        Collider[] cs = occluder.GetComponentsInChildren<Collider>();
+        foreach(Collider c in cs)
+        {
+            c.enabled = false;
+        }
+    }
+    void EnableCollider()
+    {
+        Collider[] cs = occluder.GetComponentsInChildren<Collider>();
+        foreach(Collider c in cs)
+        {
+            c.enabled = true;
+        }
+    }
+
     void GenerateResult()
     {
+        occluder.transform.position = leftOff;
+        occluder.transform.Rotate(new Vector3(0,0,-66f));
         Debug.Log("Done!");
         Debug.Log(strabismusType);
         if(GameObject.Find("Results") == null)

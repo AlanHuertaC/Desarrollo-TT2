@@ -43,7 +43,11 @@ public class EnableScenes : MonoBehaviour
 
     void CheckStatus()
     {
-        if(GameObject.Find("StrabismusData") != null) enableTest = true;
+        if(GameObject.Find("StrabismusData") != null) 
+        {
+            enableTest = true;
+            strabismusData = GameObject.Find("StrabismusData").GetComponent<StrabismusData>();
+        }
         if(GameObject.Find("Results(Clone)") != null) enableResult = true; 
     }
 
@@ -52,7 +56,10 @@ public class EnableScenes : MonoBehaviour
         if(enableTest)
         {
             coverUncover.interactable = true;
-            measureDev.interactable = true;
+            if(strabismusData.measurable && GameObject.Find("Results(Clone)") != null)
+            {
+                measureDev.interactable = true;
+            }
         }
         if(enableResult)
             results.interactable = true;

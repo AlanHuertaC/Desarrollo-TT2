@@ -124,32 +124,32 @@ public class TargetMove : MonoBehaviour
 
     void OccluderMovement()
     {
-        if (eulerAngY + 2f != valorinicial && primtime >= 401) // Paso 3. Empezar a mover el objetivo
-        {
-            Debug.Log("Menor que 30");
-            sectime = 1;
-        }
-        else if (primtime < 200) // Espacio entre que empieza la escena y empezar el algoritmo.
+        if (primtime < 300) // Espacio entre que empieza la escena y empezar el algoritmo.
         {
             //Debug.Log("Wenas :v " + valorinicial);
             primtime++;
         }
-        else if (primtime == 200) // Paso 1. Cerrar vista al ojo sano y dejar ver al ojo desviado.
+        else if (primtime == 300) // Paso 1. Cerrar vista al ojo sano y dejar ver al ojo desviado.
         {
-            if(results.eye == "LEye") pared.transform.position = new Vector3(1.42f, 0.816f, 1f); ///****
-            else pared.transform.position = new Vector3(-1.42f, 0.816f, 1f); //*****
+            if(results.eye == "LEye") pared.transform.position = new Vector3(1.25f, -0.76f, 1.33f); ///****
+            else pared.transform.position = new Vector3(-1.25f, -0.76f, 1.33f); //*****
             primtime++;
         }
-        else if(primtime > 150 && primtime < 400) /// Guardar la posición del paso 1 como posición inicial
+        else if(primtime > 300 && primtime < 600) /// Guardar la posición del paso 1 como posición inicial
         {
             valorinicial = eulerAngY;
             primtime++;
         }
-        else if(primtime == 400) /// Paso 2. Cerrar la vista al ojo desviado y abrir al ojo sano.
+        else if(primtime == 600) /// Paso 2. Cerrar la vista al ojo desviado y abrir al ojo sano.
         {
-            if(results.eye == "LEye") pared.transform.position = new Vector3(-1.42f, 0.816f, 1f); ///****
-            else pared.transform.position = new Vector3(1.42f, 0.816f, 1f); //*****
+            if(results.eye == "LEye") pared.transform.position = new Vector3(-1.25f, -0.76f, 1.33f); ///****
+            else pared.transform.position = new Vector3(1.25f, -0.76f, 1.33f); //*****
             primtime++;
+        }
+        else if (eulerAngY + 2f != valorinicial && primtime >= 601) // Paso 3. Empezar a mover el objetivo
+        {
+           // Debug.Log("Menor que 30");
+            sectime = 1;
         }
 
     }
