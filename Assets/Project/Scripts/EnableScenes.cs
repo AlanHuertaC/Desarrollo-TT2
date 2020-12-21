@@ -56,7 +56,7 @@ public class EnableScenes : MonoBehaviour
         if(enableTest)
         {
             coverUncover.interactable = true;
-            if(strabismusData.measurable && GameObject.Find("Results(Clone)") != null)
+            if(GameObject.Find("Results(Clone)") != null)
             {
                 measureDev.interactable = true;
             }

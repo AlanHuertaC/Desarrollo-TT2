@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-
+using UnityEngine.UI;
 /*
     Esta clase es la encargada de reproducir la animación del cover test.
 
@@ -139,6 +139,9 @@ public class CoverUncover : MonoBehaviour
 
     void GenerateResult()
     {
+        Button measure = GameObject.Find("MedirDesviacion").GetComponent<Button>();
+        measure.interactable = true;
+        
         occluder.transform.position = leftOff;
         occluder.transform.Rotate(new Vector3(0,0,-66f));
         Debug.Log("Done!");
@@ -156,6 +159,10 @@ public class CoverUncover : MonoBehaviour
             data.direction = "right";
         else if(strabismusType == "exo" && eye == "REye" || strabismusType == "endo" && eye == "LEye")
             data.direction = "left";
+        else if(strabismusType == "hipo")
+            data.direction = "up";
+        else //hiper
+            data.direction = "down";
     }
 
 

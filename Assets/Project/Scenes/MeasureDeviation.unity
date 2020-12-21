@@ -1213,7 +1213,7 @@ MonoBehaviour:
   eulerAngZ: 0
   valorinicial: 0
   movementSpeed: 5
-  margenError: 0.03
+  margenDetener: 0.06
   angulo: 0
 --- !u!4 &248772317 stripped
 Transform:
@@ -6501,7 +6501,7 @@ PrefabInstance:
     - target: {fileID: 725890740984995711, guid: fdbc41443c603a34ebcb59c9f6b659c4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.25
+      value: -3.9
       objectReference: {fileID: 0}
     - target: {fileID: 725890740984995711, guid: fdbc41443c603a34ebcb59c9f6b659c4,
         type: 3}
@@ -7592,7 +7592,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1439178976}
   m_OnClick:
     m_PersistentCalls:
@@ -9230,7 +9230,7 @@ PrefabInstance:
     - target: {fileID: 781059088008911176, guid: e282a87b1264676419a22eb528a8991b,
         type: 3}
       propertyPath: direction
-      value: left
+      value: down
       objectReference: {fileID: 0}
     - target: {fileID: 781059088008911176, guid: e282a87b1264676419a22eb528a8991b,
         type: 3}
@@ -9240,7 +9240,7 @@ PrefabInstance:
     - target: {fileID: 781059088008911176, guid: e282a87b1264676419a22eb528a8991b,
         type: 3}
       propertyPath: strabismusType
-      value: exo
+      value: hiper
       objectReference: {fileID: 0}
     - target: {fileID: 3303273211473270669, guid: e282a87b1264676419a22eb528a8991b,
         type: 3}
@@ -9795,7 +9795,7 @@ PrefabInstance:
     - target: {fileID: 2199647061079945260, guid: a987edebad366da479393bca51bbae61,
         type: 3}
       propertyPath: typeOfDeviation
-      value: exo
+      value: hiper
       objectReference: {fileID: 0}
     - target: {fileID: 2199647061079945261, guid: a987edebad366da479393bca51bbae61,
         type: 3}

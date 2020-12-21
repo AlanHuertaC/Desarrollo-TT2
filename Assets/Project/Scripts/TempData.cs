@@ -102,27 +102,28 @@ public class TempData : MonoBehaviour
             rightSquint = true;
             chooseEye.value = 1;
         }
-
-
-        /*
-        isForia = false;
-        isTropia = false;
-        random = 0.51f; //////////////////////// MUST BE RANDOM.
-        if(random > 0.5) isTropia = true;
-        else isForia = true;*/
-
         
         random =Random.value; 
-        if(random > 0.5) 
+        if(random < 0.25) 
         {
             typeOfDeviation = "endo";
             type.value = 0;
         }
-        else 
+        else if(random >= 0.25 && random < 0.5)
         {
             typeOfDeviation = "exo";
             type.value = 1;
-        }       
+        }
+        else if(random >= 0.5 && random < 0.75)
+        {
+            typeOfDeviation = "hiper";
+            type.value = 2;
+        }    
+        else 
+        {
+            typeOfDeviation = "hipo";
+            type.value = 3;
+        }      
 
         angleOfDisalignment = Random.value * maxAngle;
         angle.value = angleOfDisalignment;
@@ -137,8 +138,8 @@ public class TempData : MonoBehaviour
         data.isForia = false; //////*******FOR NOW ... maybe (otherwise it'll be removed)
         data.isTropia = true; //////*******FOR NOW ... maybe (otherwise it'll be removed)
         data.angleOfDisalignment = this.angleOfDisalignment;
-        if(typeOfDeviation == "hiper" || typeOfDeviation == "hipo") data.measurable = false;
-        else data.measurable = true;
+        //if(typeOfDeviation == "hiper" || typeOfDeviation == "hipo") data.measurable = false;
+        //else data.measurable = true;
         
         SceneLoader sl = GameObject.Find("SceneLoader").GetComponent<SceneLoader>();
         sl.LoadScene("MainMenu");
