@@ -11,7 +11,7 @@ public class ConexionBD
 
     public MySqlConnection getConnection()
     {
-        string connStr = "server=localhost;user=root;database=eyetec;port=3306;password=root";
+        string connStr = "server=localhost;user=root;database=eyetecdb;port=3306;password=root";
         MySqlConnection conn = new MySqlConnection(connStr);
 
         try

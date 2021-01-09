@@ -26,6 +26,7 @@ public class GetInfo : MonoBehaviour
     string angleR="0";
     string angleL="0";
     // Start is called before the first frame update
+    string textTropia="tropía";
     void Start()
     {
         resultsObject = GameObject.Find("Results(Clone)");
@@ -34,9 +35,9 @@ public class GetInfo : MonoBehaviour
         ids = consulta.getIds();
         idPaciente = ids[0];
         idEspecialista = ids[1];
-        consulta.insertOjo(idPaciente, angleR, angleL, prismas);
-        consulta.insertDiagnostico(strabismusType + "tropía", idEspecialista, idPaciente);
-        consulta.insertPreDiagnostico(idEspecialista, idPaciente);
+        
+        consulta.insertDiagnostico(strabismusType + textTropia, idEspecialista, idPaciente);
+        consulta.insertPreDiagnostico(idEspecialista, idPaciente,angleR, angleL, prismas);
     }
 
     void Update()
@@ -69,7 +70,7 @@ public class GetInfo : MonoBehaviour
     {
         if(resultsObject != null)
         {
-            typeOfDeviation.text ="Tipo de estrabismo: " + strabismusType + "tropía";
+            typeOfDeviation.text ="Tipo de estrabismo: " + strabismusType + textTropia;
             diopter.text = "Dioptrías prismáticas: "+ prismas;
             if(results.eye == "REye")
             {
