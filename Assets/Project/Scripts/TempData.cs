@@ -14,7 +14,7 @@ using UnityEngine.UI;
 
 public class TempData : MonoBehaviour
 {
-    public float maxAngle = 25f;
+    public float maxAngle = 20f;
 
     public float angleOfDisalignment;
     public string typeOfDeviation;
