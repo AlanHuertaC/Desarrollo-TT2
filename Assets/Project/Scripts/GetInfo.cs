@@ -36,8 +36,7 @@ public class GetInfo : MonoBehaviour
         idPaciente = ids[0];
         idEspecialista = ids[1];
         
-        consulta.insertDiagnostico(strabismusType + textTropia, idEspecialista, idPaciente);
-        consulta.insertPreDiagnostico(idEspecialista, idPaciente,angleR, angleL, prismas);
+        consulta.insertPreDiagnostico(idEspecialista, idPaciente, strabismusType + textTropia, angleR, angleL, prismas);
     }
 
     void Update()
