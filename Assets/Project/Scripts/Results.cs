@@ -1,0 +1,27 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Results : MonoBehaviour
+{
+    public string strabismusType;
+    public string eye;
+
+    public float angleOfDisalignment;
+
+    public string direction;
+
+    static Results instance;
+    
+    void Start()
+    {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        GameObject.DontDestroyOnLoad(gameObject);
+    }
+}

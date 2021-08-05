@@ -1,0 +1,34 @@
+	Unidades en milímetros 		Unidades en Unity
+
+IPD  		63.5 milimeters			-2.6239
+
+
+Diámetro del ojo:
+
+Vertical (Y) 	23.7mm				- 0.9793
+Horizontal (X)	24.2mm				-   1
+Depth 	(Z)	23.8 mm				- 0.9834
+
+
+Distancia 
+del objetivo  	6m(6000mm)			- 247.9338
+
+Tamaño 		15cm x 20cm			- 6.1983 x 8.2644
+del objetivo  (150mm x 200 cmm)
+
+
+
+Se tomó el 24.2 como equivalente a la unidad en Unity (sin razón especial).
+
+
+Si se llegan a cambiar los valores, se debe considerar obtener nuevamente las proporciones para que
+se asemeje al mundo real.
+
+
+
+
+	
+
+
+
+
